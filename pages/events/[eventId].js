@@ -26,10 +26,10 @@ function EventDetailPage(props) {
   return (
     <Fragment>
       <Head>
-        <title>Events</title>
+        <title>{event.title}</title>
         <meta
           name='description'
-          content='Find a lot of great events that allow you to evolve'
+          content={event.description}
         />
       </Head>
       <EventSummary title={event.title} />
