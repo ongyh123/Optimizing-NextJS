@@ -3,6 +3,7 @@
 // no user specific data
 // Hence, use the getStaticProps
 
+import Head from 'next/head';
 import { Fragment } from 'react';
 
 import { getEventById, getFeaturedEvents } from '../../helpers/api-util';
@@ -24,6 +25,13 @@ function EventDetailPage(props) {
 
   return (
     <Fragment>
+      <Head>
+        <title>Events</title>
+        <meta
+          name='description'
+          content='Find a lot of great events that allow you to evolve'
+        />
+      </Head>
       <EventSummary title={event.title} />
       <EventLogistics
         date={event.date}
@@ -60,7 +68,7 @@ export async function getStaticPaths() {
 
   return {
     paths: paths,
-    fallback:'blocking'
+    fallback: 'blocking',
   };
 }
 
